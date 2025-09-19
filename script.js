@@ -1,4 +1,4 @@
-// script.js मध्ये टाक
+// ===== Scroll Active Link =====
 window.addEventListener("scroll", () => {
   let sections = document.querySelectorAll("section");
   let navLinks = document.querySelectorAll(".navbar ul li a");
@@ -17,6 +17,16 @@ window.addEventListener("scroll", () => {
         }
       });
     }
+  });
+});
+
+// ===== Mobile Menu Toggle =====
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.getElementById('menu-btn');
+  const navbar = document.getElementById('navbar').querySelector('ul');
+
+  menuBtn.addEventListener('click', () => {
+    navbar.classList.toggle('active'); // CSS मध्ये display:flex केल्या जाईल
   });
 });
 

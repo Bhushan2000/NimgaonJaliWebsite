@@ -75,13 +75,38 @@ html {
   color: #004d40;
 }
 
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
-  cursor: pointer;
+/* Default: desktop */
+.navbar ul {
+  display: flex;
+  gap: 15px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background: #004d40;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+  }
 }
 
 /* Hero Banner */
@@ -466,4 +491,134 @@ footer .copyright {
 
 .logos-grid img:hover {
   transform: scale(1.1);
+}
+
+/* mobile view */
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+
+  /* Header */
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .logo-left {
+    margin-bottom: 10px;
+  }
+
+  .title-center h1 {
+    font-size: 1.4rem;
+  }
+
+  .title-center p {
+    font-size: 0.9rem;
+  }
+
+  /* Navbar */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background: #2c3e50;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li {
+    border-bottom: 1px solid #444;
+  }
+
+  .navbar ul li a {
+    display: block;
+    padding: 12px;
+    color: #fff;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #2c3e50;
+    margin-top: 10px;
+  }
+
+  /* Hero Banner */
+  .hero-banner img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Notice */
+  .notice-board marquee {
+    font-size: 0.9rem;
+  }
+
+  /* Table */
+  .members-table {
+    font-size: 0.9rem;
+  }
+
+  .members-table th,
+  .members-table td {
+    padding: 8px;
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Schemes Cards */
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  /* Logos */
+  .logos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-grid ul {
+    padding: 0;
+    list-style: none;
+      margin: 0;
+        
+  }
+
+  .footer-grid address {
+    font-size: 0.9rem;
+  }
 }
