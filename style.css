@@ -614,11 +614,79 @@ footer .copyright {
   .footer-grid ul {
     padding: 0;
     list-style: none;
-      margin: 0;
-        
+    margin: 0;
+
   }
 
   .footer-grid address {
     font-size: 0.9rem;
   }
+
+
+  /* Desktop Navbar */
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    transition: all 0.3s ease;
+  }
+
+  /* Menu button default hidden */
+  .menu-btn {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #2c3e50;
+    z-index: 1001;
+  }
+
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .navbar {
+      position: relative;
+    }
+
+    .navbar ul {
+      display: flex;
+      flex-direction: column;
+      background: #2c3e50;
+      position: fixed;
+      top: 0;
+      right: -250px;
+      /* hidden initially */
+      width: 220px;
+      height: 100vh;
+      padding: 60px 20px;
+      gap: 20px;
+      border-left: 3px solid #f39c12;
+      transition: right 0.4s ease;
+      z-index: 1000;
+    }
+
+    .navbar ul.active {
+      right: 0;
+      /* slide-in effect */
+    }
+
+    .navbar ul li a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar ul li a:hover {
+      color: #f39c12;
+    }
+
+    .menu-btn {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+  }
+
 }
