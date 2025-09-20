@@ -37,6 +37,7 @@
     </ul>
   </nav>
 
+
   <!-- Hamburger Menu Button -->
   <button class="menu-btn" id="menu-btn" aria-label="Menu">
     <span></span>
@@ -351,6 +352,32 @@
         </div>
     </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.querySelector(".menu-btn");
+        const navMenu = document.querySelector(".navbar ul");
+
+        // Toggle menu on button click
+        menuBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+
+            // Change icon between ☰ and ✖
+            if (menuBtn.innerHTML === "☰") {
+                menuBtn.innerHTML = "✖";
+            } else {
+                menuBtn.innerHTML = "☰";
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll(".navbar ul li a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+                menuBtn.innerHTML = "☰";
+            });
+        });
+    });
+</script>
 
 </body>
 
