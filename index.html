@@ -16,34 +16,27 @@
 
 <!-- ===== Header ===== -->
 <header class="header">
-  <div class="logo-left">
-    <img src="images/favicon.png" alt="ग्रामपंचायत लोगो" class="logo">
-  </div>
+    <div class="logo-left">
+        <img src="images/favicon.png" alt="ग्रामपंचायत लोगो" class="logo">
+    </div>
 
-  <div class="title-center">
-    <h1>निमगाव जाळी ग्रामपंचायत</h1>
-    <p>तालुका संगमनेर, जिल्हा अहमदनगर</p>
-  </div>
+    <div class="title-center">
+        <h1>निमगाव जाळी ग्रामपंचायत</h1>
+        <p>तालुका संगमनेर, जिल्हा अहमदनगर</p>
+    </div>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <ul>
-      <li><a href="#home" class="active">मुख्यपृष्ठ</a></li>
-      <li><a href="#about">गावाची माहिती</a></li>
-      <li><a href="#population">लोकसंख्या</a></li>
-      <li><a href="#members">पदाधिकारी</a></li>
-      <li><a href="#gallery">गॅलरी</a></li>
-      <li><a href="#schemes">शासकीय योजना</a></li>
-    </ul>
-  </nav>
-
-
-  <!-- Hamburger Menu Button -->
-  <button class="menu-btn" id="menu-btn" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <button class="menu-btn" id="menu-btn" aria-label="Menu">&#9776;</button>
+        <ul>
+            <li><a href="#home" class="active">मुख्यपृष्ठ</a></li>
+            <li><a href="#about">गावाची माहिती</a></li>
+            <li><a href="#population">लोकसंख्या</a></li>
+            <li><a href="#members">पदाधिकारी</a></li>
+            <li><a href="#gallery">गॅलरी</a></li>
+            <li><a href="#schemes">शासकीय योजना</a></li>
+        </ul>
+    </nav>
 </header>
 
 
@@ -352,32 +345,32 @@
         </div>
     </footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuBtn = document.querySelector(".menu-btn");
-        const navMenu = document.querySelector(".navbar ul");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.querySelector(".menu-btn");
+            const navMenu = document.querySelector(".navbar ul");
 
-        // Toggle menu on button click
-        menuBtn.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
+            // Toggle menu on button click
+            menuBtn.addEventListener("click", () => {
+                navMenu.classList.toggle("active");
 
-            // Change icon between ☰ and ✖
-            if (menuBtn.innerHTML === "☰") {
-                menuBtn.innerHTML = "✖";
-            } else {
-                menuBtn.innerHTML = "☰";
-            }
-        });
+                // Change icon between ☰ and ✖
+                if (menuBtn.innerHTML === "☰") {
+                    menuBtn.innerHTML = "✖";
+                } else {
+                    menuBtn.innerHTML = "☰";
+                }
+            });
 
-        // Close menu when clicking a link
-        document.querySelectorAll(".navbar ul li a").forEach(link => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active");
-                menuBtn.innerHTML = "☰";
+            // Close menu when clicking a link
+            document.querySelectorAll(".navbar ul li a").forEach(link => {
+                link.addEventListener("click", () => {
+                    navMenu.classList.remove("active");
+                    menuBtn.innerHTML = "☰";
+                });
             });
         });
-    });
-</script>
+    </script>
 
 </body>
 
