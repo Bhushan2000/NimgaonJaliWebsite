@@ -27,7 +27,7 @@ html {
   justify-content: space-between;
   background: linear-gradient(90deg, #00796b, #004d40);
   color: white;
-  padding: 10px 20px;
+  padding: 0px 4px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -55,7 +55,7 @@ html {
 
 .title-center h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   white-space: nowrap;
 }
 
@@ -656,4 +656,37 @@ footer div:nth-child(3) p {
 #scrollTopBtn:hover {
   background-color: #004d40;
   transform: translateY(-2px);
+}
+/* ===== Banner Slider ===== */
+.banner {
+  position: relative;
+  max-width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Hide all slides by default */
+.slides {
+  display: none;
+}
+
+/* Fading animation */
+.fade {
+  animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

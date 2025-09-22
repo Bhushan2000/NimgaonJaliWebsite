@@ -42,13 +42,18 @@
         </nav>
     </header>
 
-    <!-- ===== Hero Banner ===== -->
-    <section class="hero-banner" id="home">
-        <div class="hero-overlay">
-            <h2>स्वागत आहे निमगाव जाळी ग्रामपंचायत मध्ये</h2>
-            <p>आपला गाव – आपला अभिमान</p>
+ 
+    <!-- ===== Banner Slider ===== -->
+    <section class="banner">
+        <div class="slides fade">
+            <img src="images/photo1.jpeg" alt="Banner 1">
         </div>
-        <img src="images/photo1.jpeg" alt="ग्रामपंचायत Banner">
+        <div class="slides fade">
+            <img src="images/photo2.jpeg" alt="Banner 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/photo3.jpeg" alt="Banner 3">
+        </div>
     </section>
     <br>
     <!-- ===== Notice Board ===== -->
@@ -88,7 +93,7 @@
 
     <!-- ===== Population ===== -->
     <section class="section" id="population">
-        <h2>लोकसंख्या (2011)</h2>
+        <h2>लोकसंख्या</h2>
         <ul>
             <li>एकूण लोकसंख्या: 5,845</li>
             <li>पुरुष: 2,987</li>
@@ -420,6 +425,22 @@
                 });
             });
         });
+
+        // ===== Banner Slider =====
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 4000); // Change every 4 seconds
+        }
+
     </script>
 
 </body>
