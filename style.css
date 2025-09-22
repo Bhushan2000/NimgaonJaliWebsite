@@ -472,8 +472,7 @@ footer .copyright {
 .navbar ul {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(90deg, #00796b, #004d40);
-  width: 100%;
+   width: 100%;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
@@ -484,10 +483,7 @@ footer .copyright {
   max-height: 500px;
 }
 
-.navbar ul li {
-  border-bottom: 1px solid #444;
-}
-
+ 
 .navbar ul li a {
   display: block;
   padding: 12px 20px;
