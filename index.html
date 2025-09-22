@@ -346,9 +346,13 @@
     <button id="scrollTopBtn" title="वर जा">↑</button>
 
     <script>
+        // menu logic 
+
         document.addEventListener("DOMContentLoaded", function () {
             const menuBtn = document.querySelector(".menu-btn");
             const navMenu = document.querySelector(".navbar ul");
+            const navLinks = document.querySelectorAll(".navbar ul li a");
+            const sections = document.querySelectorAll("section");
 
             // Toggle menu on button click
             menuBtn.addEventListener("click", () => {
@@ -363,15 +367,34 @@
             });
 
             // Close menu when clicking a link
-            document.querySelectorAll(".navbar ul li a").forEach(link => {
+            navLinks.forEach(link => {
                 link.addEventListener("click", () => {
                     navMenu.classList.remove("active");
                     menuBtn.innerHTML = "☰";
                 });
             });
-        });
-        // scroll to top button
 
+            // Scroll spy logic
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120; // adjust for header height
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        });
+
+        // scroll to top button
         document.addEventListener("DOMContentLoaded", function () {
             const scrollBtn = document.getElementById("scrollTopBtn");
 
