@@ -657,18 +657,24 @@ footer div:nth-child(3) p {
   background-color: #004d40;
   transform: translateY(-2px);
 }
+
+
 /* ===== Banner Slider ===== */
 .banner {
   position: relative;
-  max-width: 100%;
-  height: 400px;
+  width: 100%;
   overflow: hidden;
 }
 
+/* Images adjust automatically */
 .banner img {
   width: 100%;
-  height: 400px;
+  height: auto;
+  /* auto height for responsive scaling */
+  max-height: 400px;
+  /* maximum height for desktop */
   object-fit: cover;
+  display: block;
 }
 
 /* Hide all slides by default */
@@ -688,5 +694,28 @@ footer div:nth-child(3) p {
 
   to {
     opacity: 1;
+  }
+}
+
+/* ===== Responsive Banner Heights ===== */
+
+/* Medium Desktop / Laptop */
+@media (max-width: 1080px) {
+  .banner img {
+    max-height: 350px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .banner img {
+    max-height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .banner img {
+    max-height: 200px;
   }
 }
