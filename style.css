@@ -583,6 +583,52 @@ footer div:nth-child(3) p {
   }
 }
 
+/* ===== 1080px Desktop Adjustments ===== */
+@media (max-width: 1080px) and (min-width: 769px) {
+
+  /* Header adjustments */
+  .header-top {
+    gap: 15px;
+    /* reduce space between logo, title, menu */
+  }
+
+  .logo-left img {
+    height: 55px;
+    /* slightly smaller logo for better fit */
+  }
+
+  .title-center h1 {
+    font-size: 1.6rem;
+    /* slightly smaller title */
+  }
+
+  .title-center p {
+    font-size: 0.95rem;
+    /* adjust subtitle */
+  }
+
+  /* Navbar spacing */
+  .navbar ul {
+    gap: 12px;
+    /* reduce spacing between menu items */
+  }
+
+  .navbar ul li a {
+    padding: 7px 12px;
+    /* slightly smaller padding for buttons */
+    font-size: 0.95rem;
+  }
+
+  /* Hero Banner adjustments */
+  .hero-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.1rem;
+  }
+}
+
 /* Scroll to Top Button */
 
 #scrollTopBtn {
