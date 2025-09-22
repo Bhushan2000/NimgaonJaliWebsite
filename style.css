@@ -15,7 +15,8 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Prevent sticky header overlap */
+  scroll-padding-top: 80px;
+  /* Prevent sticky header overlap */
 }
 
 /* ===== Header ===== */
@@ -280,7 +281,7 @@ html {
 .btn {
   display: inline-block;
   padding: 10px 18px;
-  background: #3498db;
+  background: linear-gradient(90deg, #00796b, #004d40);
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
@@ -295,7 +296,8 @@ html {
 footer {
   background: #2c3e50;
   color: #ecf0f1;
-  padding: 40px 0 20px;
+  padding: 40px 40px 20px;
+  /* top | left-right | bottom */
   font-family: "Noto Sans Devanagari", sans-serif;
 }
 
@@ -343,6 +345,11 @@ footer .copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   color: #95a5a6;
 }
+footer div:nth-child(3) p {
+  color: #b0bec5;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
 
 .stack {
   display: flex;
@@ -386,11 +393,13 @@ footer .copyright {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (max-width: 900px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 600px) {
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -415,87 +424,87 @@ footer .copyright {
     font-size: 0.9rem;
   }
 
-/* Navbar (Mobile Dropdown) */
-/* ===== Header ===== */
-.header {
-  background: linear-gradient(90deg, #00796b, #004d40);
-  color: white;
-  padding: 10px 15px;
-  position: relative;
-}
+  /* Navbar (Mobile Dropdown) */
+  /* ===== Header ===== */
+  .header {
+    background: linear-gradient(90deg, #00796b, #004d40);
+    color: white;
+    padding: 10px 15px;
+    position: relative;
+  }
 
-/* Top row (logo + title + menu button) */
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-}
+  /* Top row (logo + title + menu button) */
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
 
-.logo-left img {
-  height: 50px;
-  width: auto;
-}
+  .logo-left img {
+    height: 50px;
+    width: auto;
+  }
 
-.title-center {
-  flex: 1;
-  text-align: center;
-}
+  .title-center {
+    flex: 1;
+    text-align: center;
+  }
 
-.title-center h1 {
-  font-size: 1.5rem;
-  margin: 0;
-}
+  .title-center h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
 
-.title-center p {
-  font-size: 0.9rem;
-  margin: 0;
-}
+  .title-center p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
 
-.menu-btn {
-  display: block;
-  font-size: 1.8rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: white;
-  margin-left: auto;
-  z-index: 1001;
-}
+  .menu-btn {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    margin-left: auto;
+    z-index: 1001;
+  }
 
-/* Navbar (dropdown below row) */
-.navbar {
-  width: 100%;
-  margin-top: 10px;
-}
+  /* Navbar (dropdown below row) */
+  .navbar {
+    width: 100%;
+    margin-top: 10px;
+  }
 
-.navbar ul {
-  display: flex;
-  flex-direction: column;
-   width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  border-radius: 0;
-}
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-radius: 0;
+  }
 
-.navbar ul.active {
-  max-height: 500px;
-}
+  .navbar ul.active {
+    max-height: 500px;
+  }
 
- 
-.navbar ul li a {
-  display: block;
-  padding: 12px 20px;
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 
-.navbar ul li a:hover {
-  color: #f39c12;
-}
+  .navbar ul li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .navbar ul li a:hover {
+    color: #f39c12;
+  }
 
   /* Hero */
   .hero-overlay h2 {
@@ -553,4 +562,33 @@ footer .copyright {
   .footer-grid address {
     font-size: 0.9rem;
   }
+}
+
+/* Scroll to Top Button */
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: none;
+  /* hidden by default */
+  background-color: #00796b;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* circular shape */
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: #004d40;
+  transform: translateY(-2px);
 }

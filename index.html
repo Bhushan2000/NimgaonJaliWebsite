@@ -13,30 +13,30 @@
 
 <body>
 
-<!-- ===== Header ===== -->
-<header class="header">
-    <div class="logo-left">
-        <img src="images/favicon.png" alt="ग्रामपंचायत लोगो" class="logo">
-    </div>
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <div class="logo-left">
+            <img src="images/favicon.png" alt="ग्रामपंचायत लोगो" class="logo">
+        </div>
 
-    <div class="title-center">
-        <h1>निमगाव जाळी ग्रामपंचायत</h1>
-        <p>तालुका संगमनेर, जिल्हा अहमदनगर</p>
-    </div>
+        <div class="title-center">
+            <h1>निमगाव जाळी ग्रामपंचायत</h1>
+            <p>तालुका संगमनेर, जिल्हा अहमदनगर</p>
+        </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <button class="menu-btn" id="menu-btn" aria-label="Menu">&#9776;</button>
-        <ul>
-            <li><a href="#home" class="active">मुख्यपृष्ठ</a></li>
-            <li><a href="#about">गावाची माहिती</a></li>
-            <li><a href="#population">लोकसंख्या</a></li>
-            <li><a href="#members">पदाधिकारी</a></li>
-            <li><a href="#gallery">गॅलरी</a></li>
-            <li><a href="#schemes">शासकीय योजना</a></li>
-        </ul>
-    </nav>
-</header>
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <button class="menu-btn" id="menu-btn" aria-label="Menu">&#9776;</button>
+            <ul>
+                <li><a href="#home" class="active">मुख्यपृष्ठ</a></li>
+                <li><a href="#about">गावाची माहिती</a></li>
+                <li><a href="#population">लोकसंख्या</a></li>
+                <li><a href="#members">पदाधिकारी</a></li>
+                <li><a href="#gallery">गॅलरी</a></li>
+                <li><a href="#schemes">शासकीय योजना</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- ===== Hero Banner ===== -->
     <section class="hero-banner" id="home">
         <div class="hero-overlay">
@@ -299,9 +299,10 @@
             <div>
                 <h3>महत्त्वाच्या लिंक</h3>
                 <ul>
-                    <li><a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank">शासन निर्णय</a></li>
-                    <li><a href="https://zpnashik.maharashtra.gov.in/" target="_blank">नाशिक जिल्हा परिषद</a></li>
-                    <li><a href="https://www.maharashtra.gov.in/1125" target="_blank">महाराष्ट्र शासन</a></li>
+                    <li><a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank">शासन
+                            निर्णय</a></li>
+                    <li><a href="https://nagarzp.gov.in/" target="_blank">अहमदनगर जिल्हा परिषद</a></li>
+                    <li><a href="https://www.maharashtra.gov.in/" target="_blank">महाराष्ट्र शासन</a></li>
                     <li><a href="https://www.mahaonline.gov.in/" target="_blank">महा ऑनलाईन</a></li>
                     <li><a href="https://nashik.gov.in/en/services/rti/" target="_blank">माहिती अधिकार</a></li>
                 </ul>
@@ -319,26 +320,30 @@
             </div>
             <div>
                 <h3>सोशल मीडिया</h3>
-                <p>अपडेट्ससाठी आम्हाला फॉलो करा</p>
                 <ul class="social-links">
                     <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
                     <li><a href="https://x.com/" target="_blank">Twitter</a></li>
                     <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
                     <li><a href="https://www.youtube.com/" target="_blank">YouTube</a></li>
                 </ul>
+                <p>अपडेट्ससाठी आम्हाला फॉलो करा</p>
+
             </div>
             <div>
                 <h3>पत्ता</h3>
                 <address>
                     ग्रामपंचायत कार्यालय, निमगाव जाळी, संगमनेर, अहमदनगर
                     <br><strong>पिनकोड:</strong> 413714</br>
-                    <a href="https://maps.app.goo.gl/" target="_blank">Get Directions</a><br>
+                    <a href="https://maps.app.goo.gl/YK2Cpekx65iQZuABA" target="_blank">Get Directions</a><br>
                     मो.: <a href="tel:+919876543210">+91 98765 43210</a>
                 </address>
                 <p>© 2025 Design by <a href="https://www.novamiinfotechs.com/" target="_blank">Novami Infotechs</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="वर जा">↑</button>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -362,6 +367,28 @@
                 link.addEventListener("click", () => {
                     navMenu.classList.remove("active");
                     menuBtn.innerHTML = "☰";
+                });
+            });
+        });
+        // scroll to top button
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollBtn = document.getElementById("scrollTopBtn");
+
+            // Show button when scrolling down
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 200) {
+                    scrollBtn.style.display = "block";
+                } else {
+                    scrollBtn.style.display = "none";
+                }
+            });
+
+            // Scroll to top when clicked
+            scrollBtn.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
                 });
             });
         });
