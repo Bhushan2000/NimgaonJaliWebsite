@@ -439,10 +439,15 @@ footer div:nth-child(3) p {
   /* Navbar (Mobile Dropdown) */
   /* ===== Header ===== */
   .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background: linear-gradient(90deg, #00796b, #004d40);
     color: white;
-    padding: 10px 15px;
-    position: relative;
+    padding: 0;
+    flex-direction: column;
+    /* stack logo/title + navbar */
+    text-align: center;
   }
 
   /* Top row (logo + title + menu button) */
@@ -451,6 +456,9 @@ footer div:nth-child(3) p {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 10px 15px;
+    z-index: 1001;
+    /* above navbar */
   }
 
   /* Logo */
@@ -494,17 +502,21 @@ footer div:nth-child(3) p {
   /* Navbar (dropdown below row) */
   .navbar {
     width: 100%;
-    margin-top: 10px;
+    position: sticky;
+    top: 60px;
+    /* adjust based on header-top height */
+    z-index: 1000;
+    background: linear-gradient(90deg, #00796b, #004d40);
+    /* ensure background */
   }
 
   .navbar ul {
     display: flex;
     flex-direction: column;
-    width: 100%;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    border-radius: 0;
+
   }
 
   .navbar ul.active {
@@ -749,6 +761,7 @@ footer div:nth-child(3) p {
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
+
 /* ===== Mobile adjustments ===== */
 @media (max-width: 768px) {
   .hero-overlay h2 {
